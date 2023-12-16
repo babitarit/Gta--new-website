@@ -9,14 +9,13 @@ import http from "http";
 /* CONFIGURATION */
 dotenv.config();
 const app = express();
-app.use(express.json());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cors());
 const httpServer = http.createServer(app);
 const port = process.env.PORT || 9000;
 
 /* ROUTES */
+app.get("/", (req, res) => {
+    res.send("Hello World!");
+});
 
 /* MONGOOSE SETUP */
 
